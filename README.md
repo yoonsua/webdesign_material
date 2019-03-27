@@ -6,3 +6,4 @@ Functions for web design engineer preparation :clipboard:
 2. FadeInFadeOut Slide
 3. Reapeat Slide
 4. ComeGo Slide
+5. Popup
