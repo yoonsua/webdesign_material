@@ -32,7 +32,7 @@
 		height: 40px;
 	}
 
-	.menu > li {
+	.menu>li {
 		float: left;
 		background-color: rgb(29, 85, 206);
 		color: white;
@@ -43,6 +43,7 @@
 		display: none;
 	}
 </style>
+
 <body>
 	<ul class="menu">
 		<li>menu1</li>
@@ -60,13 +61,14 @@
 </body>
 <script>
 	// 메뉴 내리기
-	$('ul.menu > li').mouseover(function() {
+	$('ul.menu > li').mouseover(function () {
 		$(this).children('.submenu').stop().slideDown()
 	});
 
 	// 메뉴 올리기
-	$('ul.menu > li').mouseout(function() {
+	$('ul.menu > li').mouseout(function () {
 		$(this).children('.submenu').stop().slideUp()
 	});
 </script>
+
 </html>
