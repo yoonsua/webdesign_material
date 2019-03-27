@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>왼쪽으로 들어갔다 나오는 슬라이드</title>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>왼쪽으로 들어갔다 나오는 슬라이드</title>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <style>
@@ -32,12 +33,13 @@
     height: 400px;
   }
 </style>
+
 <body>
-    <div class="slide">
-        <div class="img1"><img src="img/img_slide1.jpg" alt=""></div>
-        <div class="img2"><img src="img/img_slide2.jpg" alt=""></div>
-        <div class="img3"><img src="img/img_slide3.jpg" alt=""></div>
-    </div>
+  <div class="slide">
+    <div class="img1"><img src="img/img_slide1.jpg" alt=""></div>
+    <div class="img2"><img src="img/img_slide2.jpg" alt=""></div>
+    <div class="img3"><img src="img/img_slide3.jpg" alt=""></div>
+  </div>
 </body>
 <script>
   var no = 0;
@@ -46,19 +48,28 @@
   start();
 
   function start() {
-    $('.slide div').eq(0).siblings().css({"left":-1200});
-    setInterval(function() { slide(); }, 3000);
+    $('.slide div').eq(0).siblings().css({
+      "left": -1200
+    });
+    setInterval(function () {
+      slide();
+    }, 3000);
   }
 
   function slide() {
-    if(no == img) {
+    if (no == img) {
       no = 0;
     } else {
       no += 1;
     }
 
-    $('.slide div').eq(no - 1).animate({'left':'-1200px'}, 1000);
-    $('.slide div').eq(no).animate({'left':'0px'}, 1000);
+    $('.slide div').eq(no - 1).animate({
+      'left': '-1200px'
+    }, 1000);
+    $('.slide div').eq(no).animate({
+      'left': '0px'
+    }, 1000);
   }
 </script>
+
 </html>
