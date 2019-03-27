@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>팝업창</title>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.popup {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 99;
+		background-color: rgba(0, 0, 0, 0.5);
+		text-align: center;
+		display: none;
+	}
+
+	.popup .content {
+		margin: 200px auto;
+		width: 400px;
+		height: 300px;
+		background-color: white;
+	}
+
+	.popup .content img {
+		width: 350px;
+		height: 250px;
+		display: block;
+		margin: 0px auto;
+		padding-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.popup .content button {
+		color: #FFF;
+		padding: 5px 10px;
+		border-radius: 5px;
+		border: none;
+		background-color: #009688;
+		cursor: pointer;
+	}
+
+	.click {
+		width: 200px;
+		height: 200px;
+		background-color: rgb(255, 166, 0);
+		text-align: center;
+		line-height: 200px;
+		color: white;
+		font-size: 20px;
+	}
+</style>
+
+<body>
+	<div class="popup">
+		<div class="content">
+			<img src="img/popup.jpg" alt="">
+			<button>닫기</button>
+		</div>
+	</div>
+	<div class="click">
+		<p>부리부리방범대</p>
+	</div>
+</body>
+<script>
+	$('.click').click(function () {
+		$(".popup").show();
+	});
+
+	$('.popup .content button').click(function () {
+		$('.popup').hide();
+	});
+</script>
+
+</html>
