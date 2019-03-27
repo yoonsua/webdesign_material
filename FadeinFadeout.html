@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>페이드인 페이드아웃 슬라이드</title>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.slide {
+		width: 600px;
+		height: 400px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.slide img {
+		width: 600px;
+		height: 400px;
+		position: absolute;
+	}
+</style>
+
+<body>
+	<div class="slide">
+		<img src="img/img_slide1.jpg" alt="">
+		<img src="img/img_slide2.jpg" alt="">
+		<img src="img/img_slide3.jpg" alt="">
+	</div>
+</body>
+<script>
+	setInterval(function () {
+		$('.slide img:first')
+			.fadeIn(1000)
+			.next('img')
+			.fadeOut(1000)
+			.end('img')
+			.appendTo('.slide')
+	}, 2000);
+</script>
+
+</html>
