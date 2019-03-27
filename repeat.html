@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>반복 슬라이드</title>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #slide_box {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  #slide {
+    width: 1800px;
+    height: inherit;
+    transition: all 2s;
+    position: relative;
+  }
+
+  #slide li {
+    width: 600px;
+    height: inherit;
+    float: left;
+  }
+
+  #slide img {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<body>
+  <div id="slide_box">
+    <ul id="slide">
+      <li><img src="img/img_slide1.jpg" alt=""></li>
+      <li><img src="img/img_slide2.jpg" alt=""></li>
+      <li><img src="img/img_slide3.jpg" alt=""></li>
+    </ul>
+  </div>
+</body>
+<script>
+  var move = 0;
+  var cnt = 0;
+
+  setInterval(function () {
+    document.getElementById("slide").style.left = -move + 'px';
+    move += 600;
+    cnt++;
+    if (cnt >= 3) {
+      move = 0;
+      cnt = 0;
+    }
+  }, 2000);
+</script>
+
+</html>
