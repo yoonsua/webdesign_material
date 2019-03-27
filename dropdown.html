@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>드롭다운</title>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	li {
+		width: 100px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+	}
+
+	.menu {
+		width: 300px;
+		height: 40px;
+	}
+
+	.menu > li {
+		float: left;
+		background-color: rgb(29, 85, 206);
+		color: white;
+	}
+
+	.submenu {
+		background-color: rgb(57, 105, 211);
+		display: none;
+	}
+</style>
+
+<body>
+	<ul class="menu">
+		<li>menu1</li>
+		<li>menu2
+			<ul class="submenu">
+				<li>submenu1</li>
+				<li>submenu2</li>
+				<li>submenu3</li>
+				<li>submenu4</li>
+				<li>submenu5</li>
+			</ul>
+		</li>
+		<li>menu3</li>
+
+	</ul>
+</body>
+<script>
+	// 메뉴 내리기
+	$('ul.menu > li').mouseover(function() {
+		$(this).children('.submenu').stop().slideDown()
+	});
+
+	// 메뉴 올리기
+	$('ul.menu > li').mouseout(function() {
+		$(this).children('.submenu').stop().slideUp()
+	});
+</script>
+</html>
